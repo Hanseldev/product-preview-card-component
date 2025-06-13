@@ -1,0 +1,217 @@
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+
+/* Fraunces */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* || VARIABLES */
+:root {
+    --FONT-SIZE: 14px;
+
+    --IMPORTANT-TEXT-COLOR: hsl(158, 36%, 37%);
+    --BUTTON-COLOR: hsl(158, 36%, 37%);
+    --ACTIVE-STATE-COLOR: hsl(158, 42%, 18%);
+    --HEADER-COLOR: hsl(212, 21%, 14%);
+    --TEXT-COLOR: hsl(228, 12%, 48%);
+    --BG-COLOR: hsl(30, 38%, 92%);
+    --CARD-BG-COLOR: hsl(0, 0%, 100%);
+    --BUTTON-TEXT-COLOR: hsl(0, 0%, 100%);
+
+    --PADDING: 1rem;
+    --CARD-PADDING: 1.5rem;
+    --MARGIN: 1rem;
+    --TEXT-FONT: "Montserrat", Arial;
+    --HEADER-TEXT-FONT: "Fraunces", serif;
+    --BORDER-RADIUS: 15px;
+}
+
+/* GENERAL STYLES */
+body {
+    min-height: 100vh;
+    min-width: 275px;
+    font-weight: 500;
+    font-family: var(--TEXT-FONT);
+    font-size: var(--FONT-SIZE);
+    padding: var(--PADDING);
+    background-color: var(--BG-COLOR);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+article {
+    background-color: var(--CARD-BG-COLOR);
+    border-radius: var(--BORDER-RADIUS);
+    width: 100%;
+    
+    
+    padding-left: var(--CARD-PADDING);
+    padding-right: var(--CARD-PADDING);
+}
+
+picture {
+    display: block;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    margin-bottom: var(--MARGIN);
+    /* overflow: hidden; */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    color: var(--TEXT-COLOR);
+    padding: var(--PADDING);
+    padding-bottom: 0;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--IMPORTANT-TEXT-COLOR);
+}
+
+
+/* || CLASS STYLES */
+.productImage {
+    width: 100%;
+    height: auto;
+    /* margin: 0 -1rem; */
+    border-radius: 15px 15px 0 0;
+}
+
+.productType {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--TEXT-COLOR);
+    margin-bottom: var(--MARGIN);
+}
+
+
+.productName {
+    font-family: var(--HEADER-TEXT-FONT);
+    color: var(--HEADER-COLOR);
+    font-weight: 700;
+    font-size: 2em;
+    margin-bottom: var(--MARGIN);
+}
+
+.productDesc {
+    color: var(--TEXT-COLOR);
+    line-height: 1.5;
+    margin-bottom: var(--MARGIN);
+}
+
+.prices {
+    display: flex;
+    margin-bottom: var(--MARGIN);
+    align-items: center;
+}
+
+.discountPrice {
+    flex: 1;
+    color: var(--IMPORTANT-TEXT-COLOR);
+    font-family: var(--HEADER-TEXT-FONT);
+    font-weight: 700;
+    font-size: 2em;
+    margin-right: 0.5rem;
+}
+
+.originalPrice {
+    flex: 1;
+    color: var(--TEXT-COLOR);
+    text-decoration: line-through;
+}
+
+.cart {
+    width: 100%;
+    height: 48px;
+    background-color: var(--BUTTON-COLOR);
+    border: 1px solid var(--BUTTON-COLOR);
+    border-radius: 10px;
+    color: var(--BUTTON-TEXT-COLOR);
+    font-weight: 700;
+    font-family: var(--TEXT-FONT);
+    margin-bottom: 1.5rem;
+}
+
+.cart:hover {
+    background-color: var(--ACTIVE-STATE-COLOR);
+    border-color: var(--ACTIVE-STATE-COLOR);
+}
+
+.cartIcon {
+    margin-right: 0.5rem;
+}
+
+/* || UTILITY CLASSES */
+.nowrap {
+    text-wrap: nowrap;
+}
+
+@media screen and (min-width: 768px) {
+    article {
+        max-width: 735px;
+        height: auto;
+        max-height: 550px;
+        border-radius: 15px;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    article > :nth-child(2) {
+        padding: 2rem;
+    }
+
+    .productImage {
+        max-height: 550px;
+        border-radius: 15px 0 0 15px;
+        height: 100%; 
+        width: 100%;
+        margin: 0;
+        vertical-align: middle;
+    
+    }
+
+    .productName {
+        font-size: 3em;
+    }
+
+    .productDesc {
+        font-size: 1.2em;
+        margin-bottom: 2.5rem;
+    }
+
+    .prices {
+        margin-bottom: 2.5rem;
+    }
+
+    .discountPrice {
+        font-size: 2.5em;
+    }
+
+    .originalPrice {
+        font-size: 1.2em;
+    }
+
+
+    picture {
+        display: block;
+        margin: 0;
+    }
+}
